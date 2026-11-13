@@ -60,9 +60,9 @@ SEG-Y stacks + inversion volumes         Well LAS / trajectories / checkshots
 
 ### 2. Reservoir screening
 
-Screen candidate samples from an uploaded CSV. The latest proposed scoring logic uses:
+Screen candidate samples from an uploaded CSV (Integrated seismic attribute dataset combining 3D SEG-Y amplitude stacks, elastic inversion, AVO-derived attributes, Lambda-Rho/Mu-Rho calculations, and XGBoost-predicted porosity). The latest scoring logic uses:
 
-| Attribute | Preferred direction in this **heuristic** | Weight |
+| Attribute | Preferred direction in this **heuristic** | Weightage |
 |---|---|---:|
 | `TotalSandProb` | Higher | 40% |
 | `PHIT_pred` | Higher | 30% |
