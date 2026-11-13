@@ -172,25 +172,13 @@ These relations assume consistent physical impedance units. The user-facing MVP 
 - Python 3.10+ (the GeoHackathon work used Python 3.12).
 - Packages: `streamlit`, `numpy`, `pandas`, `matplotlib`, `Pillow`, `opencv-python`, `scipy`, `segyio`, `openai`.
 - For notebook modeling/exports: `xgboost`, `scikit-learn`, `lasio`, `tqdm`, `jupyter` as applicable.
-- Network access to the **APGCE-hosted vLLM/Gemma service**. No public OpenAI API key is required for this deployment.
+- Network access to the **APGCE-hosted vLLM/Gemma service**.
 
 ```bash
 python -m pip install streamlit numpy pandas matplotlib pillow opencv-python scipy segyio openai
 ```
 
 The app imports `apgce_client.py`, which provides `MODEL`, `BASE_URL`, and `get_client()`. Configure it for your cluster's OpenAI-compatible vLLM endpoint. The model used in development was `google/gemma-4-26B-A4B-it`.
-
-From the directory containing the entrypoint, run:
-
-```bash
-streamlit run app.py
-```
-
-If your entrypoint is under `notebooks/`, instead run:
-
-```bash
-streamlit run notebooks/app.py
-```
 
 **Path note:** `seismic_sections.py` contains environment-specific paths to the APGCE SEG-Y volumes and `outputs/PHIT_pred.sgy`. Adjust these paths for the machine where Streamlit runs. The SEG-Y files themselves are not distributed with this README.
 
